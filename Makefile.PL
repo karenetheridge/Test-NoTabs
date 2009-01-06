@@ -8,7 +8,6 @@ requires 'Test::Builder';
 requires 'File::Spec';
 requires 'FindBin';
 requires 'File::Find';
-requires 'Test::Group';
 
 WriteAll;
 

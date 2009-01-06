@@ -18,4 +18,7 @@ Revision history for Test-NoTabs
      - Start building dist with ShipIt
      - Change to remove warnings in newer versions of
        Test::Builder (Florian Ragwitz)
-
+       
+0.6  2009-01-06
+     - Remove Test::Group as a dependency as Test::Group
+       currently fails its tests.
