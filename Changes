@@ -22,3 +22,6 @@ Revision history for Test-NoTabs
 0.6  2009-01-06
      - Remove Test::Group as a dependency as Test::Group
        currently fails its tests.
+
+0.7  2009-01-06
+     - Stop tests dumping files in temporary directory

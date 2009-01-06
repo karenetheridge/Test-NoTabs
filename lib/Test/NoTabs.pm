@@ -10,7 +10,7 @@ use File::Find;
 
 use vars qw( $VERSION $PERL $UNTAINT_PATTERN $PERL_PATTERN);
 
-$VERSION = '0.6';
+$VERSION = '0.7';
 
 $PERL    = $^X || 'perl';
 $UNTAINT_PATTERN  = qr|^([-+@\w./:\\]+)$|;
@@ -235,6 +235,10 @@ L<Test::Strict> was used as an example when creating this module and
 distribution.
 
 Rick Myers and Emanuele Zeppieri also provided valuable feedback.
+
+Patch to fix warnings provided by Florian Ragwitz
+
+Currently maintained by Tomas Doran C<bobtfish@bobtfish.net>
 
 =head1 SEE ALSO
 

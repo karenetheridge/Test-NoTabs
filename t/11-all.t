@@ -18,10 +18,10 @@ notabs_ok( $tabbed_file2 );
 my $tabbed_file3 = make_tabbed_file3();
 notabs_ok( $tabbed_file3 );
 
+unlink foreach ( $tabbed_file1, $tabbed_file2, $tabbed_file3 );
 
 sub make_tabbed_file1 {
-  my $tmpdir = tempdir();
-  my ($fh, $filename) = tempfile( DIR => $tmpdir, SUFFIX => '.pL' );
+  my ($fh, $filename) = tempfile();
   print $fh <<'DUMMY';
 #!/usr/bin/perl -w
 
@@ -43,8 +43,7 @@ DUMMY
 }
 
 sub make_tabbed_file2 {
-  my $tmpdir = tempdir();
-  my ($fh, $filename) = tempfile( DIR => $tmpdir, SUFFIX => '.pL' );
+  my ($fh, $filename) = tempfile();
   print $fh <<'DUMMY';
 #!/usr/bin/perl -w
 
@@ -68,8 +67,7 @@ DUMMY
 }
 
 sub make_tabbed_file3 {
-  my $tmpdir = tempdir();
-  my ($fh, $filename) = tempfile( DIR => $tmpdir, SUFFIX => '.pm' );
+  my ($fh, $filename) = tempfile();
   print $fh <<'DUMMY';
 package My::Test;
 
