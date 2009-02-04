@@ -10,9 +10,10 @@ $inc = "-I $inc" if $inc;
 
 {
     my $dir = make_bad_file_1();
-    my ($fh, $outfile) = tempfile();
+    my (undef, $outfile) = tempfile();
     ok( `$perl $inc -MTest::NoTabs -e "all_perl_files_ok( '$dir' )" 2>&1 > $outfile` );
     local $/ = undef;
+    open my $fh, '<', $outfile or die $!;
     my $content = <$fh>;
     like( $content, qr/^not ok 1 - Found tabs in '[^']*' on line 4/m, 'tabs found in tmp file 1' );
     unlink $outfile;
@@ -21,8 +22,9 @@ $inc = "-I $inc" if $inc;
 
 {
     my $dir = make_bad_file_2();
-    my ($fh, $outfile) = tempfile();
+    my (undef, $outfile) = tempfile();
     ok( `$perl $inc -MTest::NoTabs -e "all_perl_files_ok( '$dir' )" 2>&1 > $outfile` );
+    open my $fh, '<', $outfile or die $!;
     local $/ = undef;
     my $content = <$fh>;
     like( $content, qr/^not ok 1 - Found tabs in '[^']*' on line 12/m, 'tabs found in tmp file2 ' );
@@ -32,8 +34,9 @@ $inc = "-I $inc" if $inc;
 
 {
     my ($dir, $file) = make_bad_file_3();
-    my ($fh, $outfile) = tempfile();
+    my (undef, $outfile) = tempfile();
     ok( `$perl $inc -MTest::NoTabs -e "all_perl_files_ok( '$file' )" 2>&1 > $outfile` );
+    open my $fh, '<', $outfile or die $!;
     local $/ = undef;
     my $content = <$fh>;
     like( $content, qr/^not ok 1 - Found tabs in '[^']*' on line 6/m, 'tabs found in tmp file 3' );
@@ -93,6 +96,7 @@ sub new {
 __DATA__
 nick	gerakines	software engineer	22
 DUMMY
+  close $fh;
   return ($tmpdir, $filename);
 }
 
