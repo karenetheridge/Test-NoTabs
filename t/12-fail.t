@@ -15,7 +15,7 @@ $inc = "-I $inc" if $inc;
     local $/ = undef;
     open my $fh, '<', $outfile or die $!;
     my $content = <$fh>;
-    like( $content, qr/^not ok 1 - Found tabs in '[^']*' on line 4/m, 'tabs found in tmp file 1' );
+    like( $content, qr/^not ok 1 - No tabs in '[^']*' on line 4/m, 'tabs found in tmp file 1' );
     unlink $outfile;
     system("rm -rf $dir");
 }
@@ -27,7 +27,7 @@ $inc = "-I $inc" if $inc;
     open my $fh, '<', $outfile or die $!;
     local $/ = undef;
     my $content = <$fh>;
-    like( $content, qr/^not ok 1 - Found tabs in '[^']*' on line 12/m, 'tabs found in tmp file2 ' );
+    like( $content, qr/^not ok 1 - No tabs in '[^']*' on line 12/m, 'tabs found in tmp file2 ' );
     unlink $outfile;
     system("rm -rf $dir");
 }
@@ -39,7 +39,7 @@ $inc = "-I $inc" if $inc;
     open my $fh, '<', $outfile or die $!;
     local $/ = undef;
     my $content = <$fh>;
-    like( $content, qr/^not ok 1 - Found tabs in '[^']*' on line 6/m, 'tabs found in tmp file 3' );
+    like( $content, qr/^not ok 1 - No tabs in '[^']*' on line 6/m, 'tabs found in tmp file 3' );
     unlink $outfile;
     system("rm -rf $dir");
 }

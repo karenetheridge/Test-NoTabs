@@ -5,7 +5,7 @@ MANIFEST.SKIP
 Test-NoTabs-*
 Makefile.old
 .shipit
-Makefile
+^Makefile$
 blib
 pm_to_blib
 .*.swp

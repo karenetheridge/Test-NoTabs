@@ -10,7 +10,7 @@ use File::Find;
 
 use vars qw( $VERSION $PERL $UNTAINT_PATTERN $PERL_PATTERN);
 
-$VERSION = '0.8';
+$VERSION = '0.9';
 
 $PERL    = $^X || 'perl';
 $UNTAINT_PATTERN  = qr|^([-+@\w./:\\]+)$|;
@@ -64,7 +64,7 @@ sub _all_files {
 
 sub notabs_ok {
     my $file = shift;
-    my $test_txt = shift || "Found tabs in '$file'";
+    my $test_txt = shift || "No tabs in '$file'";
     $file = _module_to_path($file);
     open my $fh, $file or do { $Test->ok(0, $test_txt); $Test->diag("Could not open $file: $!"); return; };
     my $line = 0;
@@ -236,9 +236,9 @@ distribution.
 
 Rick Myers and Emanuele Zeppieri also provided valuable feedback.
 
-Patch to fix warnings provided by Florian Ragwitz
+Patch to fix warnings provided by Florian Ragwitz (rafl)
 
-Currently maintained by Tomas Doran C<bobtfish@bobtfish.net>
+Currently maintained by Tomas Doran (t0m) C<bobtfish@bobtfish.net>
 
 =head1 SEE ALSO
 

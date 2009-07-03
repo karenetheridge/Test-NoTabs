@@ -30,3 +30,6 @@ Revision history for Test-NoTabs
      - Fix tests to not open the same file 2 times at once,
        as this doesn't work on Win32 and causes CPANTS fails.
 
+0.9  2009-087-03
+     - Fix default text to make sense, test passing means there are no tabs..
+
