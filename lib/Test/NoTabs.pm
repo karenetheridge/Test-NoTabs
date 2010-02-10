@@ -71,7 +71,7 @@ sub notabs_ok {
     while (<$fh>) {
         $line++;
         next if (/^\s*#/);
-        next if (/^\s*=.+/ .. /^\s*=(cut|back|end)/);
+        next if (/^\s*=.+/ .. (/^\s*=(cut|back|end)/ || eof($fh)));
         last if (/^\s*(__END__|__DATA__)/);
         if ( /\t/ ) {
           $Test->ok(0, $test_txt . " on line $line");
@@ -85,7 +85,7 @@ sub notabs_ok {
 sub all_perl_files_ok {
     my @files = _all_perl_files( @_ );
     _make_plan();
-    foreach my $file ( @files ) {
+    foreach my $file ( sort @files ) {
       notabs_ok($file);
     }
 }
