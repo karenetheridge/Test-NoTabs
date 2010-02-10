@@ -20,3 +20,4 @@ t/04-pod.t
 t/05-pod-coverage.t
 t/11-all.t
 t/12-fail.t
+t/13-badpod.t

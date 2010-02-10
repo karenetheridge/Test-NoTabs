@@ -86,7 +86,7 @@ sub all_perl_files_ok {
     my @files = _all_perl_files( @_ );
     _make_plan();
     foreach my $file ( sort @files ) {
-      notabs_ok($file, "no tabs in $file");
+      notabs_ok($file, "No tabs in '$file'");
     }
 }
 
