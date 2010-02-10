@@ -37,4 +37,5 @@ Revision history for Test-NoTabs
      - Fix warnings with old perl versions (5.8.3) RT#54477
      - Fix bug where malformed POD in one file would break tab-detection
        in following files. (RT#53727)
+     - Make output more meaningful when you have failures. RT#46088.
 
