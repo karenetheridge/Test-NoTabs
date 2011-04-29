@@ -18,7 +18,7 @@ Revision history for Test-NoTabs
      - Start building dist with ShipIt
      - Change to remove warnings in newer versions of
        Test::Builder (Florian Ragwitz)
-       
+
 0.6  2009-01-06
      - Remove Test::Group as a dependency as Test::Group
        currently fails its tests.
@@ -38,4 +38,7 @@ Revision history for Test-NoTabs
      - Fix bug where malformed POD in one file would break tab-detection
        in following files. (RT#53727)
      - Make output more meaningful when you have failures. RT#46088.
+
+1.1 2011-04-29
+     - Fix test fails if cwd or perl has a space in its path RT#67376
 

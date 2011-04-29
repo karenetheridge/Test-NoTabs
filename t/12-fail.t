@@ -5,8 +5,8 @@ use Test::More qw(no_plan);
 use File::Temp qw( tempdir tempfile );
 
 my $perl  = $^X || 'perl';
-my $inc = join(' -I ', map { qq{"$_"} } @INC) || '';
-$inc = "-I $inc" if $inc;
+$perl = $perl =~ m/\s/ ? qq{"$perl"} : $perl;
+my $inc = "-I blib/arch -I blib/lib";
 
 {
     my $dir = make_bad_file_1();
