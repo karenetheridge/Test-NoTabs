@@ -42,5 +42,5 @@ Revision history for Test-NoTabs
 1.1 2011-04-29
      - Fix test fails if cwd or perl has a space in its path RT#67376
 
-
+1.2 2012-06-15
      - Fix to ignore inc/ for Module::Install
