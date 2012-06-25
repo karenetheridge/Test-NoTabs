@@ -46,7 +46,7 @@ sub _all_files {
     my @base_dirs = @_ ? @_ : File::Spec->catdir($Bin, $updir);
     my @found;
     my $want_sub = sub {
-        return if ($File::Find::dir =~ m![\\/]?CVS[\\/]|[\\/]?.svn[\\/]!); # Filter out cvs or subversion dirs/
+        return if ($File::Find::dir =~ m![\\/]?CVS[\\/]|[\\/]?\.svn[\\/]!); # Filter out cvs or subversion dirs/
         return if ($File::Find::dir =~ m![\\/]?blib[\\/]libdoc$!); # Filter out pod doc in dist
         return if ($File::Find::dir =~ m![\\/]?inc!); # Remove Module::Install
         return if ($File::Find::dir =~ m![\\/]?blib[\\/]man\d$!); # Filter out pod doc in dist

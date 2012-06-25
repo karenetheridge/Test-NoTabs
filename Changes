@@ -44,3 +44,6 @@ Revision history for Test-NoTabs
 
 1.2 2012-06-15
      - Fix to ignore inc/ for Module::Install
+
+     - Fix regex to ignore '.svn', but not 'Xsvn' - unescaped .
+
