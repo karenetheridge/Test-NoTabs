@@ -243,7 +243,7 @@ Currently maintained by Tomas Doran (t0m) C<bobtfish@bobtfish.net>
 
 =head1 SEE ALSO
 
-L<Test::More>, L<Test::Pod>. L<Test::Distribution>, L<Test:NoWarnings>
+L<Test::More>, L<Test::Pod>. L<Test::Distribution>, L<Test::NoWarnings>
 
 =head1 COPYRIGHT & LICENSE
 
