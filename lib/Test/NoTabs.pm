@@ -161,11 +161,6 @@ or
 This module scans your project/distribution for any perl files (scripts,
 modules, etc) for the presence of tabs.
 
-=head1 EXPORT
-
-A list of functions that can be exported.  You can delete this section
-if you don't export anything, such as for a purely object-oriented module.
-
 =head1 FUNCTIONS
 
 =head2 all_perl_files_ok( [ @directories ] )
