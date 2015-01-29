@@ -48,3 +48,7 @@ Revision history for Test-NoTabs
 1.3 2012-06-25
      - Fix regex to ignore '.svn', but not 'Xsvn' - unescaped .
 
+1.4 2015-01-29
+     - Removed boilerplate section "EXPORT" from pod (RT #96937) (Prakash Kailasa)
+     - Tightened checking for pod lines. (RT #95747) (Prakash Kailasa)
+
