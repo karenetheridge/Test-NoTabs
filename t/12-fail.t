@@ -44,6 +44,18 @@ my $inc = "-I blib/arch -I blib/lib";
     system("rm -rf $dir");
 }
 
+{
+    my ($dir, $file) = make_bad_file_4();
+    my (undef, $outfile) = tempfile();
+    ok( `$perl $inc -MTest::NoTabs -e "all_perl_files_ok( '$file' )" 2>&1 > $outfile` );
+    open my $fh, '<', $outfile or die $!;
+    local $/ = undef;
+    my $content = <$fh>;
+    like( $content, qr/^not ok 1 - No tabs in '[^']*' on line 10/m, 'tabs found in tmp file 4' );
+    unlink $outfile;
+    system("rm -rf $dir");
+}
+
 sub make_bad_file_1 {
   my $tmpdir = tempdir();
   my ($fh, $filename) = tempfile( DIR => $tmpdir, SUFFIX => '.pL' );
@@ -100,3 +112,24 @@ DUMMY
   return ($tmpdir, $filename);
 }
 
+sub make_bad_file_4 {
+  my $tmpdir = tempdir();
+  my ($fh, $filename) = tempfile( DIR => $tmpdir, SUFFIX => '.pm' );
+  print $fh <<"DUMMY";
+use strict;
+
+package My::Test;
+
+sub new {
+my (\$class) = @_;
+# split the assignment state below to make the second half look like a pod section
+my \$self 
+= bless { }, \$class;
+\treturn \$self;
+}
+
+1;
+DUMMY
+  close $fh;
+  return ($tmpdir, $filename);
+}

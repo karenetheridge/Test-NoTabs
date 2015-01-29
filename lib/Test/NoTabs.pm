@@ -72,7 +72,7 @@ sub notabs_ok {
     while (<$fh>) {
         $line++;
         next if (/^\s*#/);
-        next if (/^\s*=.+/ .. (/^\s*=(cut|back|end)/ || eof($fh)));
+        next if (/^\s*=(head[1234]|over|item|begin|for|encoding)/ .. (/^\s*=(cut|back|end)/ || eof($fh)));
         last if (/^\s*(__END__|__DATA__)/);
         if ( /\t/ ) {
           $Test->ok(0, $test_txt . " on line $line");
@@ -160,11 +160,6 @@ or
 
 This module scans your project/distribution for any perl files (scripts,
 modules, etc) for the presence of tabs.
-
-=head1 EXPORT
-
-A list of functions that can be exported.  You can delete this section
-if you don't export anything, such as for a purely object-oriented module.
 
 =head1 FUNCTIONS
 
