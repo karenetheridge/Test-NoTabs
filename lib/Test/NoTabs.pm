@@ -8,13 +8,11 @@ use File::Spec;
 use FindBin qw($Bin);
 use File::Find;
 
-use vars qw( $VERSION $PERL $UNTAINT_PATTERN $PERL_PATTERN);
+our $VERSION = '1.4';
 
-$VERSION = '1.4';
-
-$PERL    = $^X || 'perl';
-$UNTAINT_PATTERN  = qr|^([-+@\w./:\\]+)$|;
-$PERL_PATTERN     = qr/^#!.*perl/;
+our $PERL    = $^X || 'perl';
+our $UNTAINT_PATTERN  = qr|^([-+@\w./:\\]+)$|;
+our $PERL_PATTERN     = qr/^#!.*perl/;
 
 my %file_find_arg = ($] <= 5.006) ? () : (
     untaint => 1,
