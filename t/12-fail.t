@@ -124,7 +124,7 @@ package My::Test;
 sub new {
 my (\$class) = @_;
 # split the assignment state below to make the second half look like a pod section
-my \$self 
+my \$self
 = bless { }, \$class;
 \treturn \$self;
 }

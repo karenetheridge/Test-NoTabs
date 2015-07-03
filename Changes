@@ -42,7 +42,7 @@ Revision history for Test-NoTabs
        Test::Builder (Florian Ragwitz)
 
 0.4  2008-12-14
-     - Change to Module::Install so that we install 
+     - Change to Module::Install so that we install
        cleanly on a fresh perl 5.8
 
 0.3  2006-08-26
