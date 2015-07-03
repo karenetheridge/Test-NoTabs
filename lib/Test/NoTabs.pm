@@ -9,7 +9,7 @@ our $VERSION = '2.00';
 use Test::Builder;
 use File::Spec;
 use FindBin qw($Bin);
-use File::Find;
+use File::Find ();
 
 our $PERL    = $^X || 'perl';
 our $UNTAINT_PATTERN  = qr|^([-+@\w./:\\]+)$|;
@@ -58,7 +58,7 @@ sub _all_files {
         wanted   => $want_sub,
         no_chdir => 1,
     };
-    find( $find_arg, @base_dirs);
+    File::Find::find( $find_arg, @base_dirs);
     return @found;
 }
 
