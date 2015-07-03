@@ -1,4 +1,5 @@
 package Test::NoTabs;
+# ABSTRACT: Check the presence of tabs in your project
 
 use strict;
 use warnings;
@@ -131,9 +132,7 @@ sub _untaint {
 1;
 __END__
 
-=head1 NAME
-
-Test::NoTabs - Check the presence of tabs in your project
+=pod
 
 =head1 SYNOPSIS
 
@@ -181,46 +180,6 @@ the total number of files tested must be specified.
 Run a tab check on C<$file>. For a module, the path (lib/My/Module.pm) or the
 name (My::Module) can be both used.
 
-=head1 AUTHOR
-
-Nick Gerakines, C<< <nick at socklabs.com> >>
-
-=head1 BUGS
-
-Please report any bugs or feature requests to
-C<bug-test-notabs at rt.cpan.org>, or through the web interface at
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Test-NoTabs>.
-I will be notified, and then you'll automatically be notified of progress on
-your bug as I make changes.
-
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc Test::NoTabs
-
-You can also look for information at:
-
-=over 4
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Test-NoTabs>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Test-NoTabs>
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Test-NoTabs>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Test-NoTabs>
-
-=back
-
 =head1 ACKNOWLEDGEMENTS
 
 Inspired by some code written by Paul Lindner.
@@ -237,12 +196,5 @@ Currently maintained by Tomas Doran (t0m) C<bobtfish@bobtfish.net>
 =head1 SEE ALSO
 
 L<Test::More>, L<Test::Pod>. L<Test::Distribution>, L<Test::NoWarnings>
-
-=head1 COPYRIGHT & LICENSE
-
-Copyright 2006 Nick Gerakines, all rights reserved.
-
-This program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
 
 =cut
