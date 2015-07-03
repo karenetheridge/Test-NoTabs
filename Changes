@@ -1,5 +1,8 @@
 Revision history for Test-NoTabs
 
+{{ $NEXT }}
+     - migrated off of Module::Install, added META.json and other modern tooling
+
 1.4 2015-01-29
      - Removed boilerplate section "EXPORT" from pod (RT #96937) (Prakash Kailasa)
      - Tightened checking for pod lines. (RT #95747) (Prakash Kailasa)
