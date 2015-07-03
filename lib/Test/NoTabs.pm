@@ -182,6 +182,8 @@ name (My::Module) can be both used.
 
 =head1 ACKNOWLEDGEMENTS
 
+=for stopwords Emanuele Florian Lindner Ragwitz Zeppieri rafl
+
 Inspired by some code written by Paul Lindner.
 
 L<Test::Strict> was used as an example when creating this module and
