@@ -3,12 +3,12 @@ package Test::NoTabs;
 use strict;
 use warnings;
 
+our $VERSION = '2.00';
+
 use Test::Builder;
 use File::Spec;
 use FindBin qw($Bin);
 use File::Find;
-
-our $VERSION = '1.4';
 
 our $PERL    = $^X || 'perl';
 our $UNTAINT_PATTERN  = qr|^([-+@\w./:\\]+)$|;
