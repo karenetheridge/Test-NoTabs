@@ -15,7 +15,7 @@ our $PERL    = $^X || 'perl';
 our $UNTAINT_PATTERN  = qr|^([-+@\w./:\\]+)$|;
 our $PERL_PATTERN     = qr/^#!.*perl/;
 
-my %file_find_arg = ($] <= 5.006) ? () : (
+my %file_find_arg = ("$]" <= 5.006) ? () : (
     untaint => 1,
     untaint_pattern => $UNTAINT_PATTERN,
     untaint_skip => 1,
