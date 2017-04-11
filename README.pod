@@ -1,0 +1,134 @@
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+Test::NoTabs - Check the presence of tabs in your project
+
+=head1 VERSION
+
+version 2.00
+
+=head1 SYNOPSIS
+
+C<Test::NoTabs> lets you check the presence of tabs in your perl code. It
+report its results in standard C<Test::Simple> fashion:
+
+  use Test::NoTabs tests => 1;
+  notabs_ok( 'lib/Module.pm', 'Module is tab free');
+
+Module authors can include the following in a t/notabs.t and have C<Test::NoTabs>
+automatically find and check all perl files in a module distribution:
+
+  use Test::NoTabs;
+  all_perl_files_ok();
+
+or
+
+  use Test::NoTabs;
+  all_perl_files_ok( @mydirs );
+
+=head1 DESCRIPTION
+
+This module scans your project/distribution for any perl files (scripts,
+modules, etc) for the presence of tabs.
+
+=head1 FUNCTIONS
+
+=head2 all_perl_files_ok( [ @directories ] )
+
+Applies C<notabs_ok()> to all perl files found in C<@directories> (and sub
+directories). If no <@directories> is given, the starting point is one level
+above the current running script, that should cover all the files of a typical
+CPAN distribution. A perl file is *.pl or *.pm or *.t or a file starting
+with C<#!...perl>
+
+If the test plan is defined:
+
+  use Test::NoTabs tests => 3;
+  all_perl_files_ok();
+
+the total number of files tested must be specified.
+
+=head2 notabs_ok( $file [, $text] )
+
+Run a tab check on C<$file>. For a module, the path (lib/My/Module.pm) or the
+name (My::Module) can be both used.
+
+=head1 ACKNOWLEDGEMENTS
+
+=for stopwords Emanuele Florian Lindner Ragwitz Zeppieri rafl
+
+Inspired by some code written by Paul Lindner.
+
+L<Test::Strict> was used as an example when creating this module and
+distribution.
+
+Rick Myers and Emanuele Zeppieri also provided valuable feedback.
+
+Patch to fix warnings provided by Florian Ragwitz (rafl)
+
+Currently maintained by Tomas Doran (t0m) C<bobtfish@bobtfish.net>
+
+=head1 SEE ALSO
+
+L<Test::More>, L<Test::Pod>. L<Test::Distribution>, L<Test::NoWarnings>
+
+=head1 SUPPORT
+
+Bugs may be submitted through L<the RT bug tracker|https://rt.cpan.org/Public/Dist/Display.html?Name=Test-NoTabs>
+(or L<bug-Test-NoTabs@rt.cpan.org|mailto:bug-Test-NoTabs@rt.cpan.org>).
+
+There is also a mailing list available for users of this distribution, at
+L<http://lists.perl.org/list/perl-qa.html>.
+
+There is also an irc channel available for users of this distribution, at
+L<C<#perl> on C<irc.perl.org>|irc://irc.perl.org/#perl-qa>.
+
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+Nick Gerakines <nick@socklabs.com>
+
+=item *
+
+Tomas Doran (t0m) <bobtfish@bobtfish.net>
+
+=back
+
+=head1 CONTRIBUTORS
+
+=for stopwords Karen Etheridge Nick Gerakines Prakash Kailasa Justin Cook
+
+=over 4
+
+=item *
+
+Karen Etheridge <ether@cpan.org>
+
+=item *
+
+Nick Gerakines <nick@gerakines.net>
+
+=item *
+
+Prakash Kailasa <pk-github@kailasa.net>
+
+=item *
+
+Justin Cook <jscook@users.noreply.github.com>
+
+=back
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2006 by Nick Gerakines.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

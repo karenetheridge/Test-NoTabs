@@ -1,6 +1,6 @@
 Revision history for Test-NoTabs
 
-{{ $NEXT }}
+2.00      2017-04-11 19:06:44Z
      - migrated off of Module::Install, added META.json and other modern tooling
 
 1.4 2015-01-29
