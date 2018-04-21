@@ -4,7 +4,7 @@ package Test::NoTabs;
 use strict;
 use warnings;
 
-our $VERSION = '2.02';
+our $VERSION = '2.03';
 
 use Test::Builder;
 use File::Spec;
