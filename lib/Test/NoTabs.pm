@@ -137,7 +137,7 @@ __END__
 =head1 SYNOPSIS
 
 C<Test::NoTabs> lets you check the presence of tabs in your perl code. It
-report its results in standard C<Test::Simple> fashion:
+reports its results in the standard C<Test::Simple> fashion:
 
   use Test::NoTabs tests => 1;
   notabs_ok( 'lib/Module.pm', 'Module is tab free');
@@ -156,7 +156,7 @@ or
 =head1 DESCRIPTION
 
 This module scans your project/distribution for any perl files (scripts,
-modules, etc) for the presence of tabs.
+modules, etc) which contain tabs.
 
 =head1 FUNCTIONS
 
